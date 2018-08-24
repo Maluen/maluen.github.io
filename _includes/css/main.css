@@ -81,15 +81,15 @@ hr.star-primary:after {
 }
 
 header {
-    margin-top: 60px;
-    height: calc(100vh - 60px);
     position: relative;
+    height: 100vh;
     text-align: center;
     color: #fff;
     background: #{{ site.color.primary }};
 }
 
 header .container {
+    padding-top: 60px;
     padding-left: 0;
     padding-right: 0;
     margin-left: 0;
@@ -120,17 +120,12 @@ header .intro-text .skills {
 
 header .list-inline {
     margin-top: 20px;
+    margin-bottom: 0;
 }
 
 @media(min-width:768px) {
-    header {
-        margin-top: 110px;
-        height: calc(100vh - 110px);
-    }
-
     header .container {
-        padding-top: 0;
-        padding-bottom: 0;
+        padding-top: 110px;
     }
 
     header .intro-text .name {
