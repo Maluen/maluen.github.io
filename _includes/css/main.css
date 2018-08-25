@@ -103,6 +103,7 @@ header .container {
 header img {
     display: block;
     margin: 0 auto 20px;
+    border-radius: 100%;
 }
 
 header .intro-text .name {
@@ -184,6 +185,10 @@ header .list-inline {
     border: 0;
 }
 
+.navbar-fixed-top:not(.navbar-shrink) .navbar-brand {
+    display: none;
+}
+
 section {
     padding: 100px 0;
 }
@@ -194,8 +199,8 @@ section h2 {
 }
 
 section.success {
-    color: #fff;
-    background: #{{ site.color.primary }};
+    color: #{{ site.color.secondary }};
+    background: #fff;
 }
 
 @media(max-width:767px) {
@@ -206,6 +211,15 @@ section.success {
     section.first {
         padding-top: 75px;
     }
+
+    .scroll-top {
+        display: none !important;
+    }
+}
+
+#portfolio {
+    color: #fff;
+    background-color: #{{ site.color.primary }};
 }
 
 #portfolio .portfolio-item {

@@ -26,7 +26,7 @@ var cbpAnimatedHeader = (function() {
 
 	function scrollPage() {
 		var sy = scrollY();
-		if ( sy >= changeHeaderOn ) {
+		if ( sy >= window.innerHeight ) {
 			classie.add( header, 'navbar-shrink' );
 		}
 		else {
