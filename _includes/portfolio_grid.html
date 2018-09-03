@@ -8,19 +8,44 @@
                     <hr class="star-light">
                 </div>
             </div>
-            <div class="row">
-                {% for post in site.posts %}
-                    <div class="col-sm-4 portfolio-item">
-                        <a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <i class="fa fa-search-plus fa-3x"></i>
+            {% for post in site.posts %}
+                {% if post.featured %}
+                    <div class="row portfolio-item">
+                        <div class="col-lg-4">
+                            <a href="{{ post.project-url }}" target="_blank" class="portfolio-link">
+                                <div class="caption">
+                                    <div class="caption-content">
+                                        <i class="fa fa-search-plus fa-3x"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <img src="img/portfolio/{{ post.img }}" class="img-responsive" alt="{{ post.alt }}">
-                        </a>
+                                <img src="img/portfolio/{{ post.img }}" class="img-responsive" alt="{{ post.alt }}" />
+                            </a>
+                        </div>
+                        <div class="col-lg-8 portfolio-body">
+                            <h3>{{ post.title }}</h3>
+                            {% if post.description %}
+                                <p>{{ post.description }}</p>
+                            {% endif %}
+                            <ul class="list-inline item-details">
+                                {% if post.client %}
+                                    <li>Client:
+                                        <strong>{{ post.client }}</strong>
+                                    </li>
+                                {% endif %}
+                                {% if post.project-date %}
+                                    <li>Date:
+                                        <strong>{{ post.project-date }}</strong>
+                                    </li>
+                                {% endif %}
+                                {% if post.category %}
+                                    <li>Category:
+                                        <strong>{{ post.category }}</strong>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
                     </div>
-                {% endfor %}
-            </div>
+                {% endif %}
+            {% endfor %}
         </div>
     </section>
