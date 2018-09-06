@@ -222,6 +222,11 @@ section.success {
     }
 }
 
+#about .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 #about .about-item {
     display: flex;
     align-items: center;
